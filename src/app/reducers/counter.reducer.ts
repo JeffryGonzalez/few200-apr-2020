@@ -1,17 +1,23 @@
-import { Action } from '@ngrx/store';
-
+import { Action, createReducer, on } from '@ngrx/store';
+import * as actions from '../actions/counter.actions';
 
 export interface CounterState {
   current: number;
 }
 
 const initialState: CounterState = {
-  current: 999
+  current: 0
 };
 
-export function reducer(currentState: CounterState = initialState, action: Action) {
-  // for right now
-  return currentState;
+const myReducer = createReducer(
+  initialState,
+  on(actions.countReset, () => initialState),
+  on(actions.countIncremented, (cs) => ({ current: cs.current + 1 })),
+  on(actions.countDecremented, (cs) => ({ current: cs.current - 1 }))
+);
+
+export function reducer(currentState: CounterState = initialState, action: Action): CounterState {
+  return myReducer(currentState, action);
 }
 
 
