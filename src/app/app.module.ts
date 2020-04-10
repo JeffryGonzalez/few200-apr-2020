@@ -9,11 +9,17 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { CounterEffects } from './effects/counter.effects';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavComponent } from './components/nav/nav.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent
+    CounterComponent,
+    DashboardComponent,
+    NavComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
