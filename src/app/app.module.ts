@@ -13,7 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavComponent } from './components/nav/nav.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { CountingByComponent } from './components/counting-by/counting-by.component';
-
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,8 @@ import { CountingByComponent } from './components/counting-by/counting-by.compon
     AppRoutingModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
-    EffectsModule.forRoot([CounterEffects])
+    EffectsModule.forRoot([CounterEffects]),
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
