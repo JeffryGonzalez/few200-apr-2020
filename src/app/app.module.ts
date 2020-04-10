@@ -12,6 +12,7 @@ import { CounterEffects } from './effects/counter.effects';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavComponent } from './components/nav/nav.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { CountingByComponent } from './components/counting-by/counting-by.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SettingsComponent } from './components/settings/settings.component';
     CounterComponent,
     DashboardComponent,
     NavComponent,
-    SettingsComponent
+    SettingsComponent,
+    CountingByComponent
   ],
   imports: [
     BrowserModule,
