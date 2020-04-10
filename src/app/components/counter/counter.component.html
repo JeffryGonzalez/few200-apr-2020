@@ -5,5 +5,23 @@
         class="btn btn-sm btn-primary">+</button>
 <div>
   <button (click)="reset()"
+          [disabled]="resetDisabled$ | async"
           class="btn btn-primary">Reset</button>
 </div>
+<div class="btn-group"
+     role="group"
+     aria-label="Basic example">
+  <button type="button"
+          [disabled]="(by$ | async) === 1"
+          (click)="countBySet(1)"
+          class="btn btn-secondary">Count By 1</button>
+  <button type="button"
+          [disabled]="(by$ | async) === 3"
+          (click)="countBySet(3)"
+          class="btn btn-secondary">Count By 3</button>
+  <button type="button"
+          [disabled]="(by$ | async) === 5"
+          (click)="countBySet(5)"
+          class="btn btn-secondary">Count By 5</button>
+</div>
+<p>You are counting by {{ by$ | async }}</p>
