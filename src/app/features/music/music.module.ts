@@ -5,6 +5,8 @@ import { ListComponent } from './components/list/list.component';
 import { EntryComponent } from './components/entry/entry.component';
 import { StoreModule } from '@ngrx/store';
 import { featureName, reducers } from './reducers';
+import { AppEffects } from './effects/app.effects';
+import { EffectsModule } from '@ngrx/effects';
 
 
 
@@ -13,7 +15,8 @@ import { featureName, reducers } from './reducers';
   declarations: [MusicComponent, ListComponent, EntryComponent],
   imports: [
     CommonModule,
-    StoreModule.forFeature(featureName, reducers)
+    StoreModule.forFeature(featureName, reducers),
+    EffectsModule.forFeature([AppEffects])
   ],
   exports: [MusicComponent]
 })

@@ -19,7 +19,7 @@ export const adapter = createEntityAdapter<SongEntity>();
 const initialState: SongState = {
   ids: ['1', '2'],
   entities: {
-    1: { id: '1', title: 'I Will Survive', artist: 'Gloria Gaynor', album: 'Super Disco Hits', year: 1978 },
+    1: { id: '1', title: 'I Will Survive', artist: 'Cake', album: 'Fashion Nugget', year: 2000 },
     2: { id: '2', title: 'YMCA', artist: 'Village People', album: 'YMCA Album', year: 1976 }
   }
 };
