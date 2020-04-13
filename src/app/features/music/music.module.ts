@@ -7,16 +7,16 @@ import { StoreModule } from '@ngrx/store';
 import { featureName, reducers } from './reducers';
 import { AppEffects } from './effects/app.effects';
 import { EffectsModule } from '@ngrx/effects';
-
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { SongsEffects } from './effects/songs.effects';
 
 @NgModule({
   declarations: [MusicComponent, ListComponent, EntryComponent],
   imports: [
     CommonModule,
+    HttpClientModule,
     StoreModule.forFeature(featureName, reducers),
-    EffectsModule.forFeature([AppEffects])
+    EffectsModule.forFeature([AppEffects, SongsEffects])
   ],
   exports: [MusicComponent]
 })
