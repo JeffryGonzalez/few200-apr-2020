@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { MusicState, selectSongListItemModel } from './reducers';
+import { MusicState, selectSongListItemModel, selectFeatureLoaded } from './reducers';
 import { Observable } from 'rxjs';
 import { SongListItemModel } from './models';
 
@@ -10,12 +10,13 @@ import { SongListItemModel } from './models';
   styleUrls: ['./music.component.scss']
 })
 export class MusicComponent implements OnInit {
-
+  featureLoaded$: Observable<boolean>;
   songs$: Observable<SongListItemModel[]>;
   constructor(private store: Store<MusicState>) { }
 
   ngOnInit(): void {
     this.songs$ = this.store.select(selectSongListItemModel);
+    this.featureLoaded$ = this.store.select(selectFeatureLoaded);
   }
 
 }
